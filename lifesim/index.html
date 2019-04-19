@@ -5,6 +5,13 @@
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+  <script src="cordova.js"></script>
+  <script>
+    if (ons.platform.isIPhoneX()) { // Utility function
+      // Add empty attribute to the <html> element
+      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+    }
+    </script>
 </head>
 <body>
   <script>
@@ -14,11 +21,6 @@
         ons.notification.alert('Hello World!');
       })
     });
-
-  if (ons.platform.isIPhoneX()) { // Utility function
-    // Add empty attribute to the <html> element
-    document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
-  }
   </script>
 
 
