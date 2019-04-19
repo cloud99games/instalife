@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+<script>
+if (ons.platform.isIPhoneX()) { // Utility function
+  // Add empty attribute to the <html> element
+  document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+}
+</script>
 <head>
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
