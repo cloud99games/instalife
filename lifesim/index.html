@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+jon_<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
@@ -6,15 +6,110 @@
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
   <script src="instagram.js"></script>
+  <input type="/assets/data/ostypes.csv" name="OStypes" id="OStypes">
+  <script>
+    document.getElementById('OStypes').onchange = function(){
+
+      var file = this.files[0];
+
+      var reader = new FileReader();
+      reader.onload = function(progressEvent){
+        // Entire file
+        console.log(this.result);
+
+        // By lines
+        var lines = this.result.split('\n');
+        for(var line = 0; line < lines.length; line++){
+          console.log(lines[line]);
+        }
+      };
+      reader.readAsText(file);
+    };
+    </script>
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log("Service Worker Registered"))
+        .catch(e => console.log(e));
+    }
+  </script>
+  <script>
+    (function() {
+      'use strict';
+      //check for support
+      if (!('indexedDB' in window)) {
+        confirm("This browser doesn\'t support IndexedDB");
+        return;
+      }
+      var dbPromise = idb.open('db1', 1, function(upgradeDb) {
+          confirm("making new object stores");
+  //        for (var i=0, i < lines.length, i++) {
+  //          if (!upgradeDb.objectStoreNames.contains('lines.i')) {
+  //            upgradeDb.createObjectStore('lines.i');
+  //          }
+})
+});
+  </script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="apple-mobile-web-app-title" content="InstaLife">
+  <meta name="application-name" content="InstaLife">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-  <script>
-    $(function(){
-      // Initialization code
-      $('ons-button').on('click', function(e) {
-        ons.notification.alert('Button is tapped!');
-      })
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1283412545141381',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.2'
     });
+
+    FB.AppEvents.logPageView();
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script>
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+showModal()
+</script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=1283412545141381&autoLogAppEvents=1"></script>
+
+
+<div class="fb-login-button" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="true"></div>
+<script>
+if (FB.getLoginStatus=true){
+  hideModal();
+}
+</script>
+
+
+</script>
+  <script>
+  //  $(function(){
+      // Initialization code
+  //    $('ons-button').on('click', function(e) {
+  //      ons.notification.alert('Button is tapped!');
+  //    })
+  //  });
   </script>
 
 <ons-page>
@@ -71,7 +166,7 @@
 
         <div style="text-align: center; position: relative;" ondblclick="like(1)">
           <ons-icon size="150px" id="post-like-1" class="post-like" icon="ion-ios-heart"></ons-icon>
-          <img class="post-image" src="assets/img/jon_01.jpg">
+          <img class="post-image" src="assets/img/jon_01.png">
         </div>
 
         <ons-list-item class="post-button-bar" modifier="nodivider">
@@ -232,7 +327,22 @@
 
         <ons-row>
           <ons-col class="search_wrapper">
-            <img class="search_thumbnail" src="assets/img/profile-image-01.png">
+            <img class="search_thumbnail" src="assets/img/jon_01.png">
+          </ons-col>
+          <ons-col class="search_wrapper">
+            <img class="search_thumbnail" src="assets/img/jon_01.png">
+          </ons-col>
+          <ons-col class="search_wrapper">
+            <img class="search_thumbnail" src="assets/img/jon_01.png">
+          </ons-col>
+          <ons-col class="search_wrapper">
+            <img class="search_thumbnail" src="assets/img/jon_01.png">
+          </ons-col>
+          <ons-col class="search_wrapper">
+            <img class="search_thumbnail" src="assets/img/jon_01.png">
+          </ons-col>
+          <ons-col class="search_wrapper">
+            <img class="search_thumbnail" src="assets/img/jon_01.png">
           </ons-col>
 
         </ons-row>
@@ -379,7 +489,7 @@
       <div class="left">
         <ons-toolbar-button><ons-icon icon="ion-person-add"></ons-icon></ons-toolbar-button>
       </div>
-      <div class="center">david_graham</div>
+      <div class="center">jon_gagnon</div>
       <div class="right">
         <ons-toolbar-button><ons-icon icon="ion-gear-a"></ons-icon></ons-toolbar-button>
       </div>
@@ -395,7 +505,7 @@
         <div class="profile_wrapper">
           <div class="profile_image_wrapper">
             <ons-icon size="24px" icon="ion-ios-plus"></ons-icon>
-            <img src="assets/img/profile-image-08.png">
+            <img src="assets/img/jon_01.png">
           </div>
           <div class="profile_info_wrapper">
             <div class="profile_info_numbers">
@@ -415,7 +525,7 @@
             <div><ons-button class="profile_info_button" id="edit_button" modifier="large">Edit Your Profile</ons-button></div>
           </div>
         </div>
-        <div><p class="profile_extra_wrapper"> David Graham</p></div>
+        <div><p class="profile_extra_wrapper"> Jon Gagnon</p></div>
       </div>
 
 
@@ -442,18 +552,18 @@
         <ons-card class="post">
           <ons-list-item class="post_title">
             <div class="left">
-              <img class="list-item__thumbnail" src="assets/img/profile-image-03.png" >
+              <img class="list-item__thumbnail" src="assets/img/jon_01.png" >
             </div>
             <div class="center">
-              <div class="list-item__title"><b>david_graham</b></div>
-              <div class="list-item__subtitle" style="font-size: 12px">Fushimi Inari Shrine, Kyoto</div>
+              <div class="list-item__title"><b>jon_gagnon</b></div>
+              <div class="list-item__subtitle" style="font-size: 12px">San Francisco, CA</div>
             </div>
             <div class="right"><ons-button class="corner-button" modifier="quiet"><ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon></ons-button></div>
           </ons-list-item>
 
           <div style="text-align: center; position: relative;" ondblclick="like('01')">
             <ons-icon size="150px" id="post-like-01" class="post-like" icon="ion-ios-heart"></ons-icon>
-            <img class="post-image" src="assets/img/post-01.jpg">
+            <img class="post-image" src="assets/img/jon_01.png">
           </div>
 
           <ons-list-item class="post-button-bar" modifier="nodivider">
@@ -468,25 +578,25 @@
           </ons-list-item>
 
           <div class="post-like-info"><b>someone_one</b> and 24 other liked this.</div>
-          <div class="post-caption"><b>david_graham</b> beautiful kyoto #kyoto #fushimiinarishirine </div>
+          <div class="post-caption"><b>jon_gagnon</b> beautiful  </div>
           <div class="post-time">1 HOUR AGO</div>
         </ons-card>
 
         <ons-card class="post">
            <ons-list-item class="post_title">
             <div class="left">
-              <img class="list-item__thumbnail" src="assets/img/profile-image-08.png" >
+              <img class="list-item__thumbnail" src="assets/img/jon_01.png" >
             </div>
             <div class="center">
-              <div class="list-item__title"><b>david_graham</b></div>
-              <div class="list-item__subtitle" style="font-size: 12px">Kinkakuji Temple, Kyoto</div>
+              <div class="list-item__title"><b>jon_gagnon</b></div>
+              <div class="list-item__subtitle" style="font-size: 12px">San Francisco, CA</div>
             </div>
             <div class="right corner-button"><ons-toolbar-button><ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon></ons-toolbar-button></div>
           </ons-list-item>
 
           <div style="text-align: center; position: relative;" ondblclick="like('02')">
             <ons-icon size="150px" id="post-like-02" class="post-like" icon="ion-ios-heart"></ons-icon>
-            <img class="post-image" src="assets/img/post-02.jpg">
+            <img class="post-image" src="assets/img/jon_01.png">
           </div>
 
           <ons-list-item class="post-button-bar" modifier="nodivider">
@@ -501,17 +611,17 @@
           </ons-list-item>
 
           <div class="post-like-info"><b>someone_one</b> and 24 other liked this.</div>
-          <div class="post-caption"><b>david_graham</b> Golden Temple ^_^ #kyoto #goldentemple</div>
+          <div class="post-caption"><b>jon_gagnon</b> #baybridge</div>
           <div class="post-time">1 HOUR AGO</div>
         </ons-card>
 
         <ons-card class="post">
           <ons-list-item class="post_title">
             <div class="left">
-              <img class="list-item__thumbnail" src="assets/img/profile-image-02.png" >
+              <img class="list-item__thumbnail" src="assets/img/jon_01.png" >
             </div>
             <div class="center">
-              <div class="list-item__title"><b>david_graham</b></div>
+              <div class="list-item__title"><b>jon_gagnon</b></div>
               <div class="list-item__subtitle" style="font-size: 12px">Tokyo</div>
             </div>
             <div class="right"><ons-button class="corner-button" modifier="quiet"><ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon></ons-button></div>
@@ -519,7 +629,7 @@
 
           <div style="text-align: center; position: relative;" ondblclick="like('03')">
             <ons-icon size="150px" id="post-like-03" class="post-like" icon="ion-ios-heart"></ons-icon>
-            <img class="post-image" src="assets/img/post-03.jpg">
+            <img class="post-image" src="assets/img/jon_01.png">
           </div>
 
           <ons-list-item class="post-button-bar" modifier="nodivider">
@@ -534,7 +644,7 @@
           </ons-list-item>
 
           <div class="post-like-info"><b>someone_one</b> and 24 other liked this.</div>
-          <div class="post-caption"><b>david_graham</b> The harmony sakura brings #sakura #happy #harmony #love</div>
+          <div class="post-caption"><b>jon_gagnon</b> #beanie #beard</div>
           <div class="post-time">1 HOUR AGO</div>
         </ons-card>
       </div>
@@ -542,15 +652,15 @@
       <div id="grid_view">
         <ons-row>
           <ons-col class="grid_wrapper">
-            <img class="grid_thumbnail" src="assets/img/post-01.jpg">
+            <img class="grid_thumbnail" src="assets/img/jon_01.png">
           </ons-col>
 
           <ons-col class="grid_wrapper">
-            <img class="grid_thumbnail" src="assets/img/post-02.jpg">
+            <img class="grid_thumbnail" src="assets/img/jon_01.png">
           </ons-col>
 
           <ons-col class="grid_wrapper">
-            <img class="grid_thumbnail" src="assets/img/post-03.jpg">
+            <img class="grid_thumbnail" src="assets/img/jon_01.png">
           </ons-col>
         </ons-row>
       </div>
@@ -728,15 +838,15 @@
 
       <ons-list-item class="notification-post">
         <div class="left">
-          <img class="list-item__thumbnail" src="assets/img/profile-image-01.png" >
+          <img class="list-item__thumbnail" src="assets/img/jon_01.png" >
         </div>
         <div class="center">
           <div>
-            <b>david_graham</b>, <b>david_graham</b> and 18 others liked <b>david_graham</b>&#39;s post. <span style="opacity: 0.4;">1 hour ago</span>
+            <b>jon_gagnon</b>, <b>jon_gagnon</b> and 18 others liked <b>jon_gagnon</b>&#39;s post. <span style="opacity: 0.4;">1 hour ago</span>
           </div>
         </div>
         <div class="right" style="padding-right: 7px">
-          <img class="notification_thumbnail" src="assets/img/post-01.jpg">
+          <img class="notification_thumbnail" src="assets/img/jon_01.png">
         </div>
       </ons-list-item>
 
@@ -744,36 +854,36 @@
 
       <ons-list-item class="notification-post">
         <div class="left">
-          <img class="list-item__thumbnail" src="assets/img/profile-image-02.png" >
+          <img class="list-item__thumbnail" src="assets/img/jon_01.png" >
         </div>
         <div class="center">
           <div>
-            <b>david_graham</b> started following <b>david_graham</b> and 2 others. <span style="opacity: 0.4;">1 hour ago</span>
+            <b>jon_gagnon</b> started following <b>jon_gagnon</b> and 2 others. <span style="opacity: 0.4;">1 hour ago</span>
           </div>
         </div>
       </ons-list-item>
 
       <ons-list-item class="notification-post">
         <div class="left">
-          <img class="list-item__thumbnail" src="assets/img/profile-image-03.png" >
+          <img class="list-item__thumbnail" src="assets/img/jon_01.png" >
         </div>
         <div class="center">
           <div>
-            <b>david_graham</b>, <b>david_graham</b> and 18 others liked <b>david_graham</b>&#39;s post. <span style="opacity: 0.4;">1 hour ago</span>
+            <b>jon_gagnon</b>, <b>jon_gagnon</b> and 18 others liked <b>jon_gagnon</b>&#39;s post. <span style="opacity: 0.4;">1 hour ago</span>
           </div>
         </div>
         <div class="right" style="padding-right: 7px">
-          <img class="notification_thumbnail" src="assets/img/post-02.jpg">
+          <img class="notification_thumbnail" src="assets/img/jon_01.png">
         </div>
       </ons-list-item>
 
       <ons-list-item class="notification-post">
         <div class="left">
-          <img class="list-item__thumbnail" src="assets/img/profile-image-04.png" >
+          <img class="list-item__thumbnail" src="assets/img/jon_01.png" >
         </div>
         <div class="center">
           <div>
-            <b>david_graham</b> started following <b>david_graham</b> and 2 others. <span style="opacity: 0.4;">1 hour ago</span>
+            <b>jon_gagnon</b> started following <b>jon_gagnon</b> and 2 others. <span style="opacity: 0.4;">1 hour ago</span>
           </div>
         </div>
       </ons-list-item>
@@ -807,40 +917,40 @@
 
       <ons-list-item class="notification-post">
         <div class="left">
-          <img class="list-item__thumbnail" src="assets/img/profile-image-01.png">
+          <img class="list-item__thumbnail" src="assets/img/jon_01.png">
         </div>
         <div class="center">
           <div>
-            <b>david_graham</b>, <b>david_graham</b> and 18 others liked your post. <span style="opacity: 0.4;">1 hour ago</span>
+            <b>jon_gagnon</b>, <b>jon_gagnon</b> and 18 others liked your post. <span style="opacity: 0.4;">1 hour ago</span>
           </div>
         </div>
-        <div class="right" style="padding-right: 7px"><img class="notification_thumbnail" src="assets/img/post-01.jpg">
+        <div class="right" style="padding-right: 7px"><img class="notification_thumbnail" src="assets/img/jon_01.png">
         </div>
       </ons-list-item>
 
       <ons-list-item class="notification-post">
         <div class="left">
-          <img class="list-item__thumbnail" src="assets/img/profile-image-02.png">
+          <img class="list-item__thumbnail" src="assets/img/jon_01.png">
         </div>
         <div class="center">
           <div>
-            <b>david_graham</b>, <b>david_graham</b> and 18 others liked your post. <span style="opacity: 0.4;">1 hour ago</span>
+            <b>jon_gagnon</b>, <b>jon_gagnon</b> and 18 others liked your post. <span style="opacity: 0.4;">1 hour ago</span>
           </div>
         </div>
-        <div class="right" style="padding-right: 7px"><img class="notification_thumbnail" src="assets/img/post-02.jpg">
+        <div class="right" style="padding-right: 7px"><img class="notification_thumbnail" src="assets/img/jon_01.png">
         </div>
       </ons-list-item>
 
       <ons-list-item class="notification-post">
         <div class="left">
-          <img class="list-item__thumbnail" src="assets/img/profile-image-03.png">
+          <img class="list-item__thumbnail" src="assets/img/jon_01.png">
         </div>
         <div class="center">
           <div>
-            <b>david_graham</b>, <b>david_graham</b> and 18 others liked your post. <span style="opacity: 0.4;">1 hour ago</span>
+            <b>jon_gagnon</b>, <b>jon_gagnon</b> and 18 others liked your post. <span style="opacity: 0.4;">1 hour ago</span>
           </div>
         </div>
-        <div class="right" style="padding-right: 7px"><img class="notification_thumbnail" src="assets/img/post-03.jpg">
+        <div class="right" style="padding-right: 7px"><img class="notification_thumbnail" src="assets/img/jon_01.png">
         </div>
       </ons-list-item>
 

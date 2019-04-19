@@ -49,8 +49,8 @@ function generateStoryBubbles(element) {
     element.appendChild(ons.createElement(
       '<ons-carousel-item>' +
         '<div class="story">' +
-        '<div class="story-thumbnail-wraper unread"><img class="story-thumbnail" src="assets/img/profile-image-0' + (i+1) + '.png" onclick="readStory(this)"></div>' +
-        '<p>david_graham</p>' +
+        '<div class="story-thumbnail-wraper unread"><img class="story-thumbnail" src="assets/img/jon_01.png" onclick="readStory(this)"></div>' +
+        '<p>username/p>' +
         '</div>' +
       '</ons-carousel-item>'
     ));
@@ -79,4 +79,18 @@ var like = function(num) {
 var readStory = function(event) {
   event.parentNode.classList.remove("unread");
   event.parentNode.classList.add("read");
+}
+
+// login showModal
+
+function showModal() {
+  var modal = document.querySelector('ons-modal');
+  modal.show();
+  ;
+}
+
+// hide modal
+
+function  hideModal() {
+  modal.hide();
 }
