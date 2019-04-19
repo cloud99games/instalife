@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html>
-<script>
-if (ons.platform.isIPhoneX()) { // Utility function
-  // Add empty attribute to the <html> element
-  document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
-}
-</script>
 <head>
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
@@ -20,7 +14,14 @@ if (ons.platform.isIPhoneX()) { // Utility function
         ons.notification.alert('Hello World!');
       })
     });
+
+  if (ons.platform.isIPhoneX()) { // Utility function
+    // Add empty attribute to the <html> element
+    document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+  }
   </script>
+
+
   <ons-button>Click me!</ons-button>
 </body>
 </html>
