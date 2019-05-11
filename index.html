@@ -77,17 +77,11 @@
       </ons-toolbar>
 
       <ons-row>
-        <ons-col width=10% vertical-align=top>
+        <ons-col width=20% vertical-align=top>
           <ons-toolbar-button><ons-icon size="70px" icon="md-face"></ons-icon></ons-toolbar-button>
         </ons-col>
-        <ons-col width=10% vertical-align=top>
-          <div id="nameDisplay">
-            <script>
-            document.getElementById("nameDisplay").innerHTML = name ;
-            </script>
-          </div>
-        </ons-col>
-        <ons-col width=10% vertical-align=top>
+
+        <ons-col width=20% vertical-align=top>
           <div id="ageDisplay">
             <script>
               document.getElementById("ageDisplay").innerHTML = currentAge;
@@ -95,7 +89,7 @@
           </div>
         </ons-col>
 
-<ons-col width 50%>
+<ons-col width 30%>
 <div>
   <ons-icon icon="fa-smile"></ons-icon>
     Happiness
@@ -113,7 +107,7 @@
 </div>
 </ons-col>
 
-  <ons-col width=10%>
+  <ons-col width=30%>
     <ons-button id="bank" modifier="quiet">
       <div id="cash">
         <script>
@@ -124,6 +118,19 @@
       </ons-button>
   </ons-col>
 </ons-row>
+<ons-row>
+  <ons-col width=10% vertical-align=top>
+    <div id="nameDisplay">
+      <script>
+      document.getElementById("nameDisplay").innerHTML = name ;
+      </script>
+    </div>
+  </ons-col>
+</ons-row>
+
+
+
+
       <div>
 
           <ons-list id="newsfeed">
