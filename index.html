@@ -9,11 +9,41 @@
   <script src="nav.js"></script>
   <script>
   var currentAge =0;
-  var name = "Jon Gagnon";
   var cash = 0;
   </script>
 </head>
 <body>
+
+<ons-modal animation="lift">
+
+      <ons-input id="username" modifier="underbar" placeholder="Your Name" float></ons-input><br><br>
+      <ons-list>
+          <ons-list-item tappable>
+              <label class="left">
+                <ons-radio name="color" input-id="radio-1" checked></ons-radio>
+              </label>
+              <label for="radio-1" class="center">
+                Male
+              </label>
+            </ons-list-item>
+            <ons-list-item tappable>
+              <label class="left">
+                <ons-radio name="color" input-id="radio-2"></ons-radio>
+              </label>
+              <label for="radio-2" class="center">
+                Female
+              </label>
+            </ons-list-item>
+          </ons-list>
+      <ons-button cta="true" onclick="document.querySelector('ons-modal').hide()">Confirm</ons-button>
+<script>
+      var name = document.getElementsByName("username")[0].value;
+</script>
+</ons-modal>
+
+<script>
+  document.querySelector('ons-modal').show();
+</script>
 
   <ons-page>
     <ons-tabbar id="tabbar" modifer="autogrow">
@@ -21,7 +51,7 @@
       </ons-tab>
       <ons-tab icon="fa-file-invoice-dollar" label="Assets" page="assets.html">
       </ons-tab>
-      <ons-tab icon="fa-plus-circle" label="Age" page="age.html" disabled="true">
+      <ons-tab icon="fa-plus-circle" label="Subscribe" page="age.html" disabled="true">
       </ons-tab>
       <ons-tab icon="ion-ios-heart-outline" label="Relationships" page="relationships.html">
       </ons-tab>
@@ -41,7 +71,7 @@
         <div class="right">
           <ons-button onclick="age(currentAge)">
             <ons-icon icon="md-face"></ons-icon>
-            Subscribe
+            Age++
             </ons-button>
         </div>
       </ons-toolbar>
@@ -90,7 +120,7 @@
           document.getElementById("cash").innerHTML = "$ " +cash;
         </script>
     </div>
-    Bank Balance
+    Bank
       </ons-button>
   </ons-col>
 </ons-row>
@@ -114,7 +144,7 @@
                 <div class="right">
                   <ons-button onclick="age(currentAge)" disabled="true">
                     <ons-icon icon="md-face"></ons-icon>
-                    Subscribe
+                    Age++
                     </ons-button>
                 </div>
               </ons-toolbar>
@@ -194,7 +224,7 @@
                                   <div class="right">
                                     <ons-button onclick="age(currentAge)" disabled="true">
                                       <ons-icon icon="md-face"></ons-icon>
-                                      Subscribe
+                                      Age++
                                       </ons-button>
                                   </div>
                                 </ons-toolbar>
@@ -277,7 +307,7 @@
             <div class="right">
               <ons-button onclick="age(currentAge)" disabled="true">
                 <ons-icon icon="md-face"></ons-icon>
-                Subscribe
+                Age++
                 </ons-button>
             </div>
           </ons-toolbar>
@@ -317,6 +347,7 @@
           <ons-progress-bar value="18" secondary-value="50"></ons-progress-bar>
 
           </div>
+          All your money are belong to us
         </ons-page>
 </template>
 
