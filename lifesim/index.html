@@ -1,4 +1,3 @@
-jon_<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
@@ -61,19 +60,20 @@ jon_<!DOCTYPE html>
   <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=1283412545141381&autoLogAppEvents=1"></script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1283412545141381',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v3.2'
+      });
 
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1283412545141381',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v3.2'
-    });
+      FB.AppEvents.logPageView();
 
-    FB.AppEvents.logPageView();
-
-  };
+    };
 
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
@@ -82,16 +82,11 @@ jon_<!DOCTYPE html>
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<script>
-FB.getLoginStatus(function(response) {
+   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
-});
+    });
 showModal()
 </script>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=1283412545141381&autoLogAppEvents=1"></script>
 
 
 <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="true"></div>

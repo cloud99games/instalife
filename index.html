@@ -1,0 +1,418 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+  <script src="getpaid.js"></script>
+  <script src="age.js"></script>
+  <script src="nav.js"></script>
+  <script>
+  var currentAge =0;
+  var name = "Jon Gagnon";
+  var cash = 0;
+  </script>
+</head>
+<body>
+
+  <ons-page>
+    <ons-tabbar id="tabbar" modifer="autogrow">
+      <ons-tab icon="ion-ios-body" label="Infant" page="home.html" active>
+      </ons-tab>
+      <ons-tab icon="fa-file-invoice-dollar" label="Assets" page="assets.html">
+      </ons-tab>
+      <ons-tab icon="fa-plus-circle" label="Age" page="age.html" disabled="true">
+      </ons-tab>
+      <ons-tab icon="ion-ios-heart-outline" label="Relationships" page="relationships.html">
+      </ons-tab>
+      <ons-tab icon="fa-ellipsis-h" label="Activities" page="activities.html">
+      </ons-tab>
+    </ons-tabbar>
+  </ons-page>
+
+<template id="home.html">
+    <ons-page class="main_pages" id="home-page">
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button><img src="icon.png" width="80"></ons-toolbar-button>
+        </div>
+        <div class="center">InstaLife</div>
+
+        <div class="right">
+          <ons-button onclick="age(currentAge)">
+            <ons-icon icon="md-face"></ons-icon>
+            Subscribe
+            </ons-button>
+        </div>
+      </ons-toolbar>
+
+      <ons-row>
+        <ons-col width=10% vertical-align=top>
+          <ons-toolbar-button><ons-icon size="70px" icon="md-face"></ons-icon></ons-toolbar-button>
+        </ons-col>
+        <ons-col width=10% vertical-align=top>
+          <div id="nameDisplay">
+            <script>
+            document.getElementById("nameDisplay").innerHTML = name ;
+            </script>
+          </div>
+        </ons-col>
+        <ons-col width=10% vertical-align=top>
+          <div id="ageDisplay">
+            <script>
+              document.getElementById("ageDisplay").innerHTML = currentAge;
+            </script>
+          </div>
+        </ons-col>
+
+<ons-col width 50%>
+<div>
+  <ons-icon icon="fa-smile"></ons-icon>
+    Happiness
+  <ons-progress-bar value="31" secondary-value="50"></ons-progress-bar>
+  <ons-icon icon="fa-heart"></ons-icon>
+    Health
+  <ons-progress-bar value="42" secondary-value="50"></ons-progress-bar>
+  <ons-icon icon="fa-lightbulb"></ons-icon>
+    Smarts
+  <ons-progress-bar value="48" secondary-value="50"></ons-progress-bar>
+  <ons-icon icon="fa-cloud"></ons-icon>
+    Looks
+  <ons-progress-bar value="18" secondary-value="50"></ons-progress-bar>
+
+</div>
+</ons-col>
+
+  <ons-col width=10%>
+    <ons-button id="bank" modifier="quiet">
+      <div id="cash">
+        <script>
+          document.getElementById("cash").innerHTML = "$ " +cash;
+        </script>
+    </div>
+    Bank Balance
+      </ons-button>
+  </ons-col>
+</ons-row>
+      <div>
+
+          <ons-list id="newsfeed">
+            <ons-list-header>Age: 0 years</ons-list-header>
+
+
+          </ons-page>
+        </template>
+
+
+<template id="assets.html">
+            <ons-page class="main_pages" id="assets-page">
+              <ons-toolbar>
+                <div class="left">
+                  <ons-toolbar-button><ons-icon icon="ion-navicon"></ons-icon></ons-toolbar-button>
+                </div>
+                <div class="center">InstaLife</div>
+                <div class="right">
+                  <ons-button onclick="age(currentAge)" disabled="true">
+                    <ons-icon icon="md-face"></ons-icon>
+                    Subscribe
+                    </ons-button>
+                </div>
+              </ons-toolbar>
+
+              <ons-row>
+                <ons-col width=10% vertical-align=top>
+                  <ons-toolbar-button><ons-icon size="70px" icon="md-face"></ons-icon></ons-toolbar-button>
+                </ons-col>
+                <ons-col width=10% vertical-align=top>
+                  <div id="nameDisplay">
+                    <script>
+                    document.getElementById("nameDisplay").innerHTML = name ;
+                    </script>
+                  </div>
+                </ons-col>
+                <ons-col width=10% vertical-align=top>
+                  <div id="ageDisplay">
+                    <script>
+                      document.getElementById("ageDisplay").innerHTML = currentAge;
+                    </script>
+                  </div>
+                </ons-col>
+
+        <ons-col width 50%>
+        <div>
+          <ons-icon icon="fa-smile"></ons-icon>
+            Happiness
+          <ons-progress-bar value="31" secondary-value="50"></ons-progress-bar>
+          <ons-icon icon="fa-heart"></ons-icon>
+            Health
+          <ons-progress-bar value="42" secondary-value="50"></ons-progress-bar>
+          <ons-icon icon="fa-lightbulb"></ons-icon>
+            Smarts
+          <ons-progress-bar value="48" secondary-value="50"></ons-progress-bar>
+          <ons-icon icon="fa-cloud"></ons-icon>
+            Looks
+          <ons-progress-bar value="18" secondary-value="50"></ons-progress-bar>
+
+        </div>
+        </ons-col>
+
+          <ons-col width=10%>
+
+          </ons-col>
+        </ons-row>
+
+
+        <ons-list id="assetlist">
+          <ons-list-header>Finances</ons-list-header>
+          <ons-button modifier="large--quiet">
+
+          <ons-list-item><ons-icon icon="fa-money"></ons-icon> view</ons-list-item>
+          </ons-button>
+
+
+          <ons-list-header>Cars</ons-list-header>
+          <ons-button modifier="large--quiet">
+          <ons-list-item><ons-icon icon="fa-car"></ons-icon> view</ons-list-item>
+          </ons-button>
+
+
+          <ons-list-header>Real Estate</ons-list-header>
+          <ons-button modifier="large--quiet">
+          <ons-list-item><ons-icon icon="fa-home"></ons-icon> view</ons-list-item>
+          </ons-button>
+        </ons-list>
+
+                    </ons-page>
+                  </template>
+<template id="relationships.html">
+                              <ons-page class="main_pages" id="relationship-page">
+                                <ons-toolbar>
+                                  <div class="left">
+                                    <ons-toolbar-button><ons-icon icon="ion-navicon"></ons-icon></ons-toolbar-button>
+                                  </div>
+                                  <div class="center">InstaLife</div>
+                                  <div class="right">
+                                    <ons-button onclick="age(currentAge)" disabled="true">
+                                      <ons-icon icon="md-face"></ons-icon>
+                                      Subscribe
+                                      </ons-button>
+                                  </div>
+                                </ons-toolbar>
+
+                                <ons-row>
+                                  <ons-col width=10% vertical-align=top>
+                                    <ons-toolbar-button><ons-icon size="70px" icon="md-face"></ons-icon></ons-toolbar-button>
+                                  </ons-col>
+                                  <ons-col width=10% vertical-align=top>
+                                    <div id="nameDisplay">
+                                      <script>
+                                      document.getElementById("nameDisplay").innerHTML = name ;
+                                      </script>
+                                    </div>
+                                  </ons-col>
+                                  <ons-col width=10% vertical-align=top>
+                                    <div id="ageDisplay">
+                                      <script>
+                                        document.getElementById("ageDisplay").innerHTML = currentAge;
+                                      </script>
+                                    </div>
+                                  </ons-col>
+
+                          <ons-col width 50%>
+                          <div>
+                            <ons-icon icon="fa-smile"></ons-icon>
+                              Happiness
+                            <ons-progress-bar value="31" secondary-value="50"></ons-progress-bar>
+                            <ons-icon icon="fa-heart"></ons-icon>
+                              Health
+                            <ons-progress-bar value="42" secondary-value="50"></ons-progress-bar>
+                            <ons-icon icon="fa-lightbulb"></ons-icon>
+                              Smarts
+                            <ons-progress-bar value="48" secondary-value="50"></ons-progress-bar>
+                            <ons-icon icon="fa-cloud"></ons-icon>
+                              Looks
+                            <ons-progress-bar value="18" secondary-value="50"></ons-progress-bar>
+
+                          </div>
+                          </ons-col>
+
+                            <ons-col width=10%>
+
+                            </ons-col>
+                          </ons-row>
+
+
+                          <ons-list id="assetlist">
+                            <ons-list-header>Parents</ons-list-header>
+                            <ons-button modifier="large--quiet">
+
+                            <ons-list-item><ons-icon icon="fa-smile-wink"></ons-icon> view</ons-list-item>
+                            </ons-button>
+
+
+                            <ons-list-header>Siblings</ons-list-header>
+                            <ons-button modifier="large--quiet">
+                            <ons-list-item><ons-icon icon="fa-user"></ons-icon> view</ons-list-item>
+                            </ons-button>
+
+
+                            <ons-list-header>Pets</ons-list-header>
+                            <ons-button modifier="large--quiet">
+                            <ons-list-item><ons-icon icon="fa-paw"></ons-icon> view</ons-list-item>
+                            </ons-button>
+
+
+                                      </ons-page>
+                                    </template>
+
+
+
+<template id="age.html">
+        <ons-page class="main_pages" id="age-page">
+          <ons-toolbar>
+            <div class="left">
+              <ons-toolbar-button><ons-icon icon="ion-navicon"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="center">InstaLife</div>
+            <div class="right">
+              <ons-button onclick="age(currentAge)" disabled="true">
+                <ons-icon icon="md-face"></ons-icon>
+                Subscribe
+                </ons-button>
+            </div>
+          </ons-toolbar>
+
+          <ons-row>
+            <ons-col width=10% vertical-align=top>
+              <ons-toolbar-button><ons-icon size="70px" icon="md-face"></ons-icon></ons-toolbar-button>
+            </ons-col>
+            <ons-col width=10% vertical-align=top>
+              <div id="nameDisplay">
+                <script>
+                document.getElementById("nameDisplay").innerHTML = name ;
+                </script>
+              </div>
+            </ons-col>
+            <ons-col width=10% vertical-align=top>
+              <div id="ageDisplay">
+                <script>
+                  document.getElementById("ageDisplay").innerHTML = currentAge;
+                </script>
+              </div>
+            </ons-col>
+
+          <ons-col width 50%>
+          <div>
+          <ons-icon icon="fa-smile"></ons-icon>
+          Happiness
+          <ons-progress-bar value="31" secondary-value="50"></ons-progress-bar>
+          <ons-icon icon="fa-heart"></ons-icon>
+          Health
+          <ons-progress-bar value="42" secondary-value="50"></ons-progress-bar>
+          <ons-icon icon="fa-lightbulb"></ons-icon>
+          Smarts
+          <ons-progress-bar value="48" secondary-value="50"></ons-progress-bar>
+          <ons-icon icon="fa-cloud"></ons-icon>
+          Looks
+          <ons-progress-bar value="18" secondary-value="50"></ons-progress-bar>
+
+          </div>
+        </ons-page>
+</template>
+
+<template id="activities.html">
+        <ons-page class="main_pages" id="activities-page">
+          <ons-toolbar>
+            <div class="left">
+              <ons-toolbar-button><ons-icon icon="ion-navicon"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="center">InstaLife</div>
+            <div class="right">
+
+            </div>
+          </ons-toolbar>
+<ons-navigator swipeable id="myNavigator" page="page1.html"></ons-navigator>
+
+<template id="page1.html">
+  <ons-page id="page1">
+    <ons-toolbar>
+      <div class="center">Activities</div>
+    </ons-toolbar>
+    <ons-list id="listActivities">
+      <ons-list-header>Love</ons-list-header>
+      <ons-button modifier="large--quiet" id="push-button">
+
+      <ons-list-item><ons-icon icon="fa-heart"></ons-icon> view</ons-list-item>
+      </ons-button>
+
+
+      <ons-list-header>Mind & Body</ons-list-header>
+      <ons-button modifier="large--quiet" id="push-button">
+      <ons-list-item><ons-icon icon="fa-bicycle"></ons-icon> view</ons-list-item>
+      </ons-button>
+
+
+      <ons-list-header>Movie Theater</ons-list-header>
+      <ons-button modifier="large--quiet" id="push-button">
+      <ons-list-item><ons-icon icon="fa-film"></ons-icon> view</ons-list-item>
+      </ons-button>
+
+      <ons-list-header>Pets</ons-list-header>
+      <ons-button modifier="large--quiet" id="push-button">
+      <ons-list-item><ons-icon icon="fa-paw"></ons-icon> view</ons-list-item>
+      </ons-button>
+    </ons-list>
+
+  </ons-page>
+</template>
+
+<template id="page2.html">
+  <ons-page id="page2">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Page 1</ons-back-button></div>
+      <div class="center"></div>
+    </ons-toolbar>
+
+    <p>Love</p>
+  </ons-page>
+</template>
+
+<template id="page3.html">
+  <ons-page id="page3">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Page 1</ons-back-button></div>
+      <div class="center"></div>
+    </ons-toolbar>
+
+    <p>Mind & Body</p>
+  </ons-page>
+</template>
+
+
+<template id="page4.html">
+  <ons-page id="page4">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Page 1</ons-back-button></div>
+      <div class="center"></div>
+    </ons-toolbar>
+
+    <p>Movie Theater</p>
+  </ons-page>
+</template>
+
+
+<template id="page5.html">
+  <ons-page id="page5">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Page 1</ons-back-button></div>
+      <div class="center"></div>
+    </ons-toolbar>
+
+    <p>Pets</p>
+  </ons-page>
+</template>
+
+
+
+        </ons-page>
+</template>

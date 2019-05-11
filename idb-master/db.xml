@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <row>
+    <FIELD1>firstnames</FIELD1>
+  </row>
+  <row>
+    <FIELD1>lastnames</FIELD1>
+  </row>
+  <row>
+    <FIELD1>genders</FIELD1>
+  </row>
+  <row>
+    <FIELD1>countries</FIELD1>
+  </row>
+  <row>
+    <FIELD1>cities</FIELD1>
+  </row>
+</root>
