@@ -9,7 +9,16 @@
   <script src="nav.js"></script>
   <script>
   var currentAge =0;
+  var name = "  ";
   var cash = 0;
+
+  function start(){
+    document.querySelector('ons-modal').hide()
+    name = document.querySelector('ons-input').value;
+    document.getElementById("nameDisplay").innerHTML = name ;
+  }
+
+
   </script>
 </head>
 <body>
@@ -35,10 +44,7 @@
               </label>
             </ons-list-item>
           </ons-list>
-      <ons-button cta="true" onclick="document.querySelector('ons-modal').hide()">Confirm</ons-button>
-<script>
-      var name = document.getElementsByName("username")[0].value;
-</script>
+      <ons-button cta="true" onclick="start()">Confirm</ons-button>
 </ons-modal>
 
 <script>
@@ -89,7 +95,7 @@
           </div>
         </ons-col>
 
-<ons-col width 30%>
+<ons-col width 40%>
 <div>
   <ons-icon icon="fa-smile"></ons-icon>
     Happiness
@@ -107,7 +113,7 @@
 </div>
 </ons-col>
 
-  <ons-col width=30%>
+  <ons-col width=20%>
     <ons-button id="bank" modifier="quiet">
       <div id="cash">
         <script>
@@ -119,7 +125,7 @@
   </ons-col>
 </ons-row>
 <ons-row>
-  <ons-col width=10% vertical-align=top>
+  <ons-col width=100% vertical-align=top>
     <div id="nameDisplay">
       <script>
       document.getElementById("nameDisplay").innerHTML = name ;
